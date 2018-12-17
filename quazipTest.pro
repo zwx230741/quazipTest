@@ -11,11 +11,12 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = quazipTest
 TEMPLATE = app
 
-INCLUDEPATH +=./include
+INCLUDEPATH += $$PWD/include
+
 CONFIG(debug, debug|release) {
-    LIBS += -L$$PWD/debug/ -l quazipd
+    LIBS += -L$$PWD/lib -lquazipd
 } else {
-    LIBS += -L$$PWD/release/ -l quazip
+    LIBS += -L$$PWD/lib -lquazip
 }
 
 SOURCES += main.cpp\
